@@ -20,7 +20,7 @@ for _ in range(15):  # Change 10 to the number of empty lines you want
 st.sidebar.write("View the code and dataset details: https://github.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction")
 
 #import data
-data = pd.read_csv("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/refs/heads/main/UCI_Credit_Card.csv")
+data = pd.read_csv("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/refs/heads/main/datasets/UCI_Credit_Card.csv")
 data_macro = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/main/data_macro.xlsx")
 data_income = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/main/data_income.xlsx")
 
