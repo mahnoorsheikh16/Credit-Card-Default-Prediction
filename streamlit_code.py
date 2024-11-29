@@ -24,7 +24,7 @@ st.sidebar.write("View the code and dataset details: https://github.com/mahnoors
 data = pd.read_csv("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/UCI_Credit_Card.csv")
 data_macro = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/main/data_macro.xlsx")
 data_income = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/main/data_income.xlsx")
-test_set = pd.read_csv(https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/test_set.csv")
+test_set = pd.read_csv("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/test_set.csv")
 
 data.rename(columns={'default.payment.next.month': 'Default'}, inplace=True)
 data.rename(columns={'PAY_0': 'PAY_1'}, inplace=True)
