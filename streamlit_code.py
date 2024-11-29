@@ -256,3 +256,51 @@ elif page == "🖥️Decoding the Algorithm":
     image5 = Image.open("distribution_smote.png")
     st.image(image5, width=800)
 
+elif page == "🕵🏻Identify Defaults":
+    st.subheader("Upload client data for next month's defaults")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.write("Or download the sample test set and upload it back for predictions:")
+    with col2:
+        csv_data = test_set.to_csv(index=False)
+        st.download_button(label="Download Test Set", data=csv_data, file_name="test_set.csv", mime="text/csv",)
+    uploaded_file = st.file_uploader("Upload your CSV file for prediction", type=["csv"])
+    st.write("")
+    st.write("")
+    xgb_model = joblib.load('xgb_model.pkl')
+    if uploaded_file is not None:
+        user_data = pd.read_csv(uploaded_file)
+        try:
+            #check file has all columns
+            required_columns = ['PC1','PC2','PC3','PC4','PC5','PC6','LIMIT_BAL','AGE','PAY_1','PAY_2',
+                                'PAY_3','PAY_4','PAY_5','PAY_6','SEX_binary_00','SEX_binary_01',
+                                'EDUCATION_binary_00','EDUCATION_binary_01','EDUCATION_binary_10',
+                                'EDUCATION_binary_11','MARRIAGE_binary_00','MARRIAGE_binary_01',
+                                'MARRIAGE_binary_10']
+            missing_cols = [col for col in required_columns if col not in user_data.columns]
+            if missing_cols:
+                st.error(f"The following required columns are missing: {missing_cols}")
+            else:
+                predictions = xgb_model.predict(user_data[required_columns])
+                user_data['Default_Prediction'] = ['Default' if pred == 1 else 'No Default' for pred in predictions]
+
+                #calculate summary
+                total_rows = len(user_data)
+                num_defaults = sum(user_data['Default_Prediction'] == 'Default')
+                num_non_defaults = sum(user_data['Default_Prediction'] == 'No Default')
+                percent_defaults = (num_defaults / total_rows) * 100
+                percent_non_defaults = (num_non_defaults / total_rows) * 100
+    
+                st.write("**Prediction Results:**")
+                col1, col2 = st.columns([0.75, 1])
+                with col1:
+                    st.dataframe(user_data[['Default_Prediction']])
+                with col2:
+                    st.write(f"Total Observations: {total_rows}")
+                    st.write(f"Defaults: {num_defaults} ({percent_defaults:.2f}%)")
+                    st.write(f"Non-Defaults: {num_non_defaults} ({percent_non_defaults:.2f}%)")
+                    csv_output = user_data.to_csv(index=False)
+                    st.download_button("Download Full Dataset with Defaults", csv_output, "predictions.csv", "text/csv")
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
+
