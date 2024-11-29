@@ -11,18 +11,20 @@ import json
 import plotly.io as pio
 from PIL import Image
 import streamlit.components.v1 as components
+import joblib
 
 #add navigation sidebar
 st.sidebar.title("🔎Explore")
-page = st.sidebar.selectbox("Select a page:", ["🏡Home", "👪Demographic Data", "💳Credit Limit & Balance", "📊Macroeconomic Factors","🤑Sep Defaulters","🖥️Decoding the Algorithm"], index=0)
+page = st.sidebar.selectbox("Select a page:", ["🏡Home", "🕵🏻Identify Defaults", "👪Demographic Data", "💳Credit Limit & Balance", "📊Macroeconomic Factors","🤑Sep Defaulters","🖥️Decoding the Algorithm"], index=0)
 for _ in range(15):  # Change 10 to the number of empty lines you want
     st.sidebar.write("")
-st.sidebar.write("View the code and dataset details: https://github.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction")
+st.sidebar.write("View the code and dataset details: https://github.com/mahnoorsheikh16/Credit-Card-Default-Prediction")
 
 #import data
-data = pd.read_csv("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/refs/heads/main/UCI_Credit_Card.csv")
-data_macro = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/main/data_macro.xlsx")
-data_income = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/FDS-Project-CMSE830-Credit-Card-Default-Prediction/main/data_income.xlsx")
+data = pd.read_csv("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/UCI_Credit_Card.csv")
+data_macro = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/main/data_macro.xlsx")
+data_income = pd.read_excel("https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/main/data_income.xlsx")
+test_set = pd.read_csv(https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/test_set.csv")
 
 data.rename(columns={'default.payment.next.month': 'Default'}, inplace=True)
 data.rename(columns={'PAY_0': 'PAY_1'}, inplace=True)
