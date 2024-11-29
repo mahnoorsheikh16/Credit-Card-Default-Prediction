@@ -32,10 +32,11 @@ data.rename(columns={'PAY_0': 'PAY_1'}, inplace=True)
 #set page content
 if page == "🏡Home":
     st.title('Beyond the Client')
-    st.subheader("Enhancing Credit Card Default Prediction with Behavioral Analysis and Macroeconomic Data")
+    st.subheader("Advancing Credit Card Default Prediction with Behavioral and Macroeconomic Analysis")
     st.write("")
     st.write("")
-    st.write("The Bank of Taiwan is facing losses due to increasing credit card defaults. This poses a major concern as defaults can result in significant losses and, in severe cases, even bankruptcy. This dashboard provides a means to identify factors associated with credit card defaults and help identify potential faulty clients to curb losses.")
+    st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. This dashboard uses an advanced machine learning model to identify high-risk clients and predict defaults.")
+    st.write("Navigate to the 'Identify Defaults' page to upload client data and predict next month's defaulting customers.")
     st.write("")
     total_customers = len(data)
     total_defaults = len(data[data['Default'] == 'yes'])
