@@ -87,12 +87,3 @@ Data on labour, income, and inflation for Taiwan in 2005 have been sourced from 
 `Unemployment Rate`: Percentage of people in the labour force who are unemployed (includes civilians age 15 & above who were: (i) jobless (ii) available for work (iii) seeking a job or waiting for results after job seeking during the reference week (iv) waiting for a recall after layoff (v) having a job offer but have not started to work)
 
 `Avg Income Level`: Disposable income of employees (including those having: (i) full-time, part-time, or another payroll (ii) entrepreneurial income (iii) property income (iv) imputed rent income (v) current transfer receipts)
-
-## Data Cleaning and Preprocessing:
-Visit the [streamlit web app](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) to explore the structure, quality, and key patterns in the data.
-
-## Exploratory Data Analysis
-Visit the [streamlit web app](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) to explore the insights derived from the dataset. The app features summaries of the T-test and Chi-Square test, which identify significant variables, as well as methods like SMOTE used to manage class imbalance.
-
-## Modelling and Results:
-Visit the [streamlit web app](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) to explore the feature engineering, pre-processing, model evaluation and time series analysis that went into solving this problem.
