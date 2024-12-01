@@ -22,8 +22,8 @@ st.sidebar.write("View the code and dataset details: https://github.com/mahnoors
 
 #import data
 data = pd.read_csv(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\datasets\UCI_Credit_Card.csv")
-data_macro = pd.read_excel(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\datasets\data_macro.xlsx")
-data_income = pd.read_excel(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\datasets\data_income.xlsx")
+data_macro = pd.read_excel(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\streamlit\data_macro.xlsx")
+data_income = pd.read_excel(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\streamlit\data_income.xlsx")
 test_set = pd.read_csv(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\streamlit\test_set.csv")
 
 data.rename(columns={'default.payment.next.month': 'Default'}, inplace=True)
