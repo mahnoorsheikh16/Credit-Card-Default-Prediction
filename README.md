@@ -1,15 +1,12 @@
 # Credit Card Default Prediction
-This classification problem aims to predict whether a customer will default on next month's credit card payment using a [UCI dataset](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients).
+This classification problem aims to predict whether a customer will default on next month's credit card payment using Logistic Regression, Support Vector Machine and XGBoost Classifier.
 
-Access the [streamlit](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) web app to explore insights derived from the analysis.
+Access the [streamlit](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) web app to delve into the detailed steps of data cleaning, preprocessing, modelling, and time series forecasting, as well as to uncover the insights derived from the analysis.
 
 ## Table of Contents:
 1. [Introduction](#introduction)
 2. [Environment](#environment)
 3. [Datasets](#datasets)
-4. [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
-5. [Exploratory Data Analysis](#exploratory-data-analysis)
-6. [Modelling and Results](#modelling-and-results)
 
 ## Introduction:
 Credit risk refers to the cardholder's inability to make required payments on their credit card debt, leading to 'credit default.' This poses a major concern for financial institutions, as defaults can result in significant losses and, in severe cases, even bankruptcy. Conducting thorough evaluations and verifying a borrower's ability to repay can help prevent the over-issuance of credit cards to unqualified applicants, thereby minimizing credit risk.
@@ -29,7 +26,7 @@ streamlit run streamlit_code.py
 ## Datasets:
 **I. Default of Credit Card Clients**
 
-Dataset contains information on credit card clients in Taiwan from April 2005 to September 2005. It has 30,000 instances across 25 attributes, contains multivariate characteristics, and the attributes have both integer, categorical and real data types. The attribute summary is as follows:
+[UCI dataset](https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients) contains information on credit card clients in Taiwan from April 2005 to September 2005. It has 30,000 instances across 25 attributes, contains multivariate characteristics, and the attributes have both integer, categorical and real data types. The attribute summary is as follows:
 
 `ID`: ID of each client
 
