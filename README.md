@@ -9,7 +9,7 @@ Access the [streamlit](https://credit-card-default-prediction-msu-cmse830.stream
 3. [Datasets](#datasets)
 4. [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
 5. [Exploratory Data Analysis](#exploratory-data-analysis)
-6. [Future Work](#future-work)
+6. [Modelling and Results](#modelling-and-results)
 
 ## Introduction:
 Credit risk refers to the cardholder's inability to make required payments on their credit card debt, leading to 'credit default.' This poses a major concern for financial institutions, as defaults can result in significant losses and, in severe cases, even bankruptcy. Conducting thorough evaluations and verifying a borrower's ability to repay can help prevent the over-issuance of credit cards to unqualified applicants, thereby minimizing credit risk.
@@ -92,40 +92,10 @@ Data on labour, income, and inflation for Taiwan in 2005 have been sourced from 
 `Avg Income Level`: Disposable income of employees (including those having: (i) full-time, part-time, or another payroll (ii) entrepreneurial income (iii) property income (iv) imputed rent income (v) current transfer receipts)
 
 ## Data Cleaning and Preprocessing:
-To prepare the dataset for model evaluation, I start with variable identification and classification. I first remove unique variables like 'ID' and rename columns for better understanding. The target variable is the binary variable 'Default,' and the explanatory variables have information about customer demographics and payment history. These are 14 quantitative variables with discrete data (integers), i.e. LIMIT_BAL, AGE, BILL_AMT1-6, PAY_AMT1-6, and 10 categorical variables, where EDUCATION and MARRIAGE are nominal; SEX and Default are binary, and PAY_1-6 are ordinal. The macroeconomic and income datasets have continuous numerical data. I further check the unique values of each categorical variable for inconsistencies during data quality assessment and find all labels to match their given data descriptions, except for PAY_1-6 variables. '-2' and '0' instances are undocumented but make up a significant chunk of the data so they cannot be treated as unknowns. Upon inspection of the label order and observations, we can infer '-2' to be no payment due and '0' to represent a payment delay for <1 month (however we cannot be sure).
-
-As part of data cleaning, I started by removing 35 duplicate rows and using the Label Encoder for variables 'MARRIAGE', 'SEX', 'Default' and 'EDUCATION' so their values can be compatible with further analytical techniques. The 'EDUCATION' and 'MARRIAGE' variables have 345 and 54 missing values respectively, which make up less than 2% of the dataset. To classify the type of feature missingness, three methods are employed: heatmap, correlation matrix and pair plots:
-![missing_heatmap](https://github.com/user-attachments/assets/5affd66f-8fec-4107-a7b6-908e32fa83c7)
-![missingcor_heatmap](https://github.com/user-attachments/assets/98a7bc03-6950-49bd-ad18-8b8b36fbca23)
-#### EDUCATION Pairplot:
-![education_pairplot](https://github.com/user-attachments/assets/a540aed2-70fa-40ed-bc87-411c0a91c118)
-#### MARRIAGE Pairplot
-![marriage_pairplot](https://github.com/user-attachments/assets/135b64d0-79df-4281-b837-b524380fd722)
-
-No significant correlation is found between between the variables and missing data so I classify it as MCAR missingness of general pattern (most complex to handle). 
-Since missing data is an insignificant percentage of the overall data, we can safely drop columns. However, I also employ KNN imputation to not lose any significant information. The reason for choosing KNN is that other techniques like MICE might be overkill here since it’s best suited for scenarios with intricate relationships and more extensive missing data patterns. Also, since categorical features have missing data, they cannot be imputed using numerical methods. KNN imputation is tested with various n_neighbors and is set to 15 neighbours for maximum accuracy.
-
-To verify changes to the distribution of data post-handling of missing values, I visualize using count plots. 
-
-![data_drop](https://github.com/user-attachments/assets/e5961f23-1115-4619-8b81-f4dc40848249)
-![data_imputation](https://github.com/user-attachments/assets/eb80082f-a82f-43c1-b66c-6061ebbd2917)
-
-The distributions remain identical after both methods so no significant loss is recorded. I move forward with imputed data so there are more values to work with and fix integer data types for features.
-
-Since Label Encoder has introduced bias in the model (higher labels will be given more weightage), I use Binary Encoding on 'MARRIAGE', 'SEX', 'Default' and 'EDUCATION' variables. Binary Encoding can be more efficient than One-Hot Encoding since it generates fewer features and our data is already of a high dimension with variables having many categories. I then drop repetitive columns from the dataset to make it cleaner. 
-
-To identify outliers in the dataset, I employ the Z-Score method and set the threshold to 'z > 3'. 7476 rows are classified as outliers and since this makes up 25% of the dataset, I do not remove them. Further, I scale LIMIT_BAL, BILL_AMT1-6, PAY_AMT1-6 variables due to their large ranges. Robust Scaler, which uses median and IQR as benchmarks, is employed as it is robust to outliers. Scatterplots are used for LIMIT_BAL, BILL_AMT and PAY_AMT variables to visualize changes in their distributions after scaling.
-#### LIMIT_BAL vs BILL_AMT1
-![scaleddata_billamt](https://github.com/user-attachments/assets/d487a29d-bd16-486e-869a-21ba3f6bc805)
-#### LIMIT_BAL vs PAY_AMT6
-![scaleddata_payamt](https://github.com/user-attachments/assets/d3c7ac1a-fd9b-4c0b-b710-337615bf2856)
-
-The data is found to follow an identical relationship after scaling.
-
-Finally, the credit card default dataset is combined with the macroeconomic and income datasets using default counts. This is used to further explore the relationships between variables using exploratory data analysis.
+Visit the [streamlit web app](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) to explore the structure, quality, and key patterns in the data.
 
 ## Exploratory Data Analysis
 Visit the [streamlit web app](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) to explore the insights derived from the dataset. The app features summaries of the T-test and Chi-Square test, which identify significant variables, as well as methods like SMOTE used to manage class imbalance.
 
-## Future Work:
-This project is a work in progress. The goal is to apply these insights to different machine learning models to predict whether a customer will default on their next credit card payment. I also plan to use regression to explore how changes in specific variables affect the probability of default. Scaling the data will take this analysis further by uncovering true relationships without the noise, especially since the dataset contains many outliers.
+## Modelling and Results:
+Visit the [streamlit web app](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) to explore the feature engineering, pre-processing, model evaluation and time series analysis that went into solving this problem.
