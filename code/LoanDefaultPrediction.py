@@ -29,9 +29,9 @@ from sklearn.model_selection import train_test_split
 
 
 #import data
-data = pd.read_csv(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\UCI_Credit_Card.csv")
-data_macro = pd.read_excel(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\Macroeconomic indicators.xlsx")
-data_income = pd.read_excel(r"C:\Users\manos\OneDrive\Desktop\MSU\Fall 2024\CMSE 830 Foundations of Data Science\Project\Midterm\Income level.xlsx")
+data = pd.read_csv(r"https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/datasets/UCI_Credit_Card.csv")
+data_macro = pd.read_excel(r"https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/datasets/Macroeconomic%20indicators.xlsx")
+data_income = pd.read_excel(r"https://raw.githubusercontent.com/mahnoorsheikh16/Credit-Card-Default-Prediction/refs/heads/main/datasets/Income%20level.xlsx")
 print(data.head())
 print(data.shape)
 print(data_macro)
