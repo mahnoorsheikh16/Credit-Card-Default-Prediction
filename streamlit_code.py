@@ -31,7 +31,7 @@ data.rename(columns={'PAY_0': 'PAY_1'}, inplace=True)
 
 #set page content
 if page == "📄Overview":
-    st.title('Credit Default Predictor: Identify Next Month’s High-Risk Clients')
+    st.header('Credit Default Predictor: Identify Next Month’s High-Risk Clients')
     st.write("")
     st.write("")
     st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. This dashboard uses an advanced machine learning model to identify high-risk clients and predict defaults.")
