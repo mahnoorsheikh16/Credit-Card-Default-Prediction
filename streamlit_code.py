@@ -52,9 +52,9 @@ if page == "📄Overview":
     st.write("")
     st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. By leveraging advanced machine learning, it provides clear insights to identify high-risk clients early, enabling proactive decisions before monthly reviews or client assessments to minimize financial risk.")
     st.write("**Dashboard Layout:**")
-    st.write("Identify Defaulting Customers for Next Month: Navigate to the ‘Identify Defaults’ section from the left-hand menu to see upcoming customer defaults.")
-    st.write("Analyze IDA and Key Trends: Visit the ‘Data Analysis & Insights’ page to explore critical patterns and performance metrics.")
-    st.write("Learn About the Model: Head to the ‘Decoding the Algorithm’ page for a detailed breakdown of the model behind the analysis.")
+    st.write("**Identify Defaulting Customers for Next Month**: Navigate to the ‘Identify Defaults’ section from the left-hand menu to see upcoming customer defaults.")
+    st.write("**Analyze IDA and Key Trends**: Visit the ‘Data Analysis & Insights’ page to explore critical patterns and performance metrics.")
+    st.write("**Learn About the Model**: Head to the ‘Decoding the Algorithm’ page for a detailed breakdown of the model behind the analysis.")
 
 elif page == "🕵🏻Identify Defaults":
     st.subheader("Upload client data for next month's defaults")
@@ -64,7 +64,7 @@ elif page == "🕵🏻Identify Defaults":
     with col2:
         csv_data = test_set.to_csv(index=False)
         st.download_button(label="Download Test Set", data=csv_data, file_name="test_set.csv", mime="text/csv",)
-    uploaded_file = st.file_uploader("Upload your CSV file for prediction", type=["csv"])
+    uploaded_file = st.file_uploader("Upload your CSV file for predictions:", type=["csv"])
     st.write("")
     st.write("")
     xgb_model = joblib.load('xgb_model.pkl')
