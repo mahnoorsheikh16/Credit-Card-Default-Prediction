@@ -15,7 +15,7 @@ import joblib
 
 #add navigation sidebar
 st.sidebar.title("🔎Explore")
-page = st.sidebar.selectbox("Select a page:", ["Overview", "🕵🏻Identify Defaults", "📊Data Analysis & Insights", "🖥️Decoding the Algorithm"], index=0)
+page = st.sidebar.selectbox("Select a page:", ["📄Overview", "🕵🏻Identify Defaults", "📊Data Analysis & Insights", "🖥️Decoding the Algorithm"], index=0)
 for _ in range(15):  # Change 10 to the number of empty lines you want
     st.sidebar.write("")
 st.sidebar.write("View the code and dataset details: https://github.com/mahnoorsheikh16/Credit-Card-Default-Prediction")
@@ -30,7 +30,7 @@ data.rename(columns={'default.payment.next.month': 'Default'}, inplace=True)
 data.rename(columns={'PAY_0': 'PAY_1'}, inplace=True)
 
 #set page content
-if page == "🏡Home":
+if page == "📄Overview":
     st.title('Beyond the Client')
     st.subheader("Advancing Credit Card Default Prediction with Behavioral and Macroeconomic Analysis")
     st.write("")
