@@ -34,10 +34,6 @@ if page == "📄Overview":
     st.header('Credit Default Predictor: Identify Next Month’s High-Risk Clients')
     st.write("")
     st.write("")
-    st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. This dashboard uses an advanced machine learning model to identify high-risk clients and predict defaults.")
-    st.write("Welcome to the Credit Default Prediction Dashboard! Designed for business employees, this tool allows you to upload client data and receive predictions for next month's credit card defaults. By leveraging advanced machine learning, the dashboard provides clear insights to help you identify high-risk clients and take proactive measures to minimize financial risk.")
-    st.write("Navigate to the 'Identify Defaults' page to upload client data and predict next month's defaulting customers.")
-    st.write("")
     total_customers = len(data)
     total_defaults = len(data[data['Default'] == 'yes'])
     money_lost = data['BILL_AMT1'].sum()
@@ -51,6 +47,10 @@ if page == "📄Overview":
         st.metric("**Default Percentage**", f"{perc:,}%")
     with col4:
         st.metric("**Total NTD Lost**", f"${money_lost:,}")
+    st.write("")
+    st.write("Credit card defaults are causing significant losses for the Bank of Taiwan.")
+    st.write("Welcome to the Credit Default Prediction Dashboard! Designed for business employees, this tool allows you to upload client data and receive predictions for next month's credit card defaults. By leveraging advanced machine learning, the dashboard provides clear insights to help you identify high-risk clients and take proactive measures to minimize financial risk.")
+    st.write("Navigate to the 'Identify Defaults' page to upload client data and predict next month's defaulting customers.")
 
 elif page == "🕵🏻Identify Defaults":
     st.subheader("Upload client data for next month's defaults")
