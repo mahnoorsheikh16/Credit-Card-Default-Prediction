@@ -48,7 +48,7 @@ if page == "📄Overview":
     with col4:
         st.metric("**Total NTD Lost**", f"${money_lost:,}")
     st.write("")
-    st.write("Welcome to the Credit Default Prediction Dashboard! Designed for risk managers and financial teams, this tool allows you to upload client data and predict next month’s credit card defaulters.")
+    st.write("Welcome to the Credit Default Prediction Dashboard! Designed for risk managers and financial teams, this tool allows you to upload client data and predict next month’s defaulters.")
     st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. By leveraging advanced machine learning, it provides clear insights to identify high-risk clients early, enabling proactive decisions before monthly reviews or client assessments to minimize financial risk.")
     st.write("Navigate to the 'Identify Defaults' page to upload client data and predict next month's defaulting customers.")
 
