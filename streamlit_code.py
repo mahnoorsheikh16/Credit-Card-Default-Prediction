@@ -50,7 +50,10 @@ if page == "📄Overview":
     st.write("")
     st.write("Welcome to the Credit Default Prediction Dashboard! Designed for risk managers and financial teams, this tool allows you to upload client data and predict next month’s defaulters.")
     st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. By leveraging advanced machine learning, it provides clear insights to identify high-risk clients early, enabling proactive decisions before monthly reviews or client assessments to minimize financial risk.")
-    st.write("Navigate to the 'Identify Defaults' page to upload client data and predict next month's defaulting customers.")
+    st.write("**Dashboard Layout:**")
+    st.write("Identify Defaulting Customers for Next Month: Navigate to the ‘Identify Defaults’ section from the left-hand menu to see upcoming customer defaults.")
+    st.write("Analyze IDA and Key Trends: Visit the ‘Data Analysis & Insights’ page to explore critical patterns and performance metrics.")
+    st.write("Learn About the Model: Head to the ‘Decoding the Algorithm’ page for a detailed breakdown of the model behind the analysis.")
 
 elif page == "🕵🏻Identify Defaults":
     st.subheader("Upload client data for next month's defaults")
