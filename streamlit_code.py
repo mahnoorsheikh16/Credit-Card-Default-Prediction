@@ -33,7 +33,6 @@ data.rename(columns={'PAY_0': 'PAY_1'}, inplace=True)
 if page == "📄Overview":
     st.header('Credit Default Predictor: Identify Next Month’s High-Risk Clients')
     st.write("")
-    st.write("")
     st.write("Welcome to the Credit Default Prediction Dashboard! Designed for risk managers and financial teams, this tool allows you to upload client data and predict next month’s defaulters.")
     st.write("**Why?** Credit card defaults are causing significant losses for the Bank of Taiwan. By leveraging advanced machine learning, it provides clear insights to identify high-risk clients early, enabling proactive decisions before monthly reviews or client assessments to minimize financial risk.") 
     st.write("")
