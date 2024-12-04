@@ -35,6 +35,7 @@ if page == "📄Overview":
     st.write("")
     st.write("")
     st.write("Credit card defaults are causing significant losses for the Bank of Taiwan. This dashboard uses an advanced machine learning model to identify high-risk clients and predict defaults.")
+    st.write("Welcome to the Credit Default Prediction Dashboard! Designed for business employees, this tool allows you to upload client data and receive predictions for next month's credit card defaults. By leveraging advanced machine learning, the dashboard provides clear insights to help you identify high-risk clients and take proactive measures to minimize financial risk.")
     st.write("Navigate to the 'Identify Defaults' page to upload client data and predict next month's defaulting customers.")
     st.write("")
     total_customers = len(data)
