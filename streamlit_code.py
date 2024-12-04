@@ -52,7 +52,7 @@ if page == "📄Overview":
         st.metric("**Total NTD Lost**", f"${money_lost:,}")
     st.write("")
     st.write("**Dashboard Layout:**")
-    st.write("**Identify Defaulting Customers for Next Month**: Navigate to the ‘Identify Defaults’ section from the left-hand menu to see upcoming customer defaults.")
+    st.write("**Identify Defaulting Customers for Next Month**: Navigate to the ‘Identify Defaults’ page (from the left-hand menu) to see upcoming customer defaults.")
     st.write("**Analyze IDA and Key Trends**: Visit the ‘Data Analysis & Insights’ page to explore critical patterns and performance metrics.")
     st.write("**Learn About the Model**: Head to the ‘Decoding the Algorithm’ page for a detailed breakdown of the model behind the analysis.")
 
