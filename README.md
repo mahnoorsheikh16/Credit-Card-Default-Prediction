@@ -3,6 +3,8 @@ This classification problem aims to predict whether a customer will default on n
 
 Access the [streamlit](https://credit-card-default-prediction-msu-cmse830.streamlit.app/) web app to delve into the detailed steps of data cleaning, preprocessing, modelling, and time series forecasting, as well as to uncover the insights derived from the analysis.
 
+*This is a course project for CMSE 830 Foundations of Data Science at MSU.
+
 ## Table of Contents:
 1. [Introduction](#introduction)
 2. [Environment](#environment)
